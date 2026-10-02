@@ -1,0 +1,12 @@
+{
+  "listen": "127.0.0.1:8080",
+  "repoDir": "./data",
+  "repoName": "repo.git",
+  "maxScanBytes": 52428800,
+  "scanTimeoutSeconds": 30,
+  "rules": [
+    { "id": "aws-access-key", "pattern": "AKIA[0-9A-Z]{16}" },
+    { "id": "private-key", "pattern": "-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----" },
+    { "id": "generic-token", "pattern": "(?i)(api[_-]?key|secret|token)\\s*[:=]\\s*\\S{16,}" }
+  ]
+}
