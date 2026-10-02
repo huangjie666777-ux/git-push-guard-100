@@ -1,0 +1,21 @@
+{
+  "port": 8080,
+  "repo_dir": "./data/main.git",
+  "scan_timeout_seconds": 30,
+  "max_scan_bytes": 268435456,
+  "git_bin": "git",
+  "rules": [
+    {
+      "id": "aws-access-key-id",
+      "regexp": "AKIA[0-9A-Z]{16}"
+    },
+    {
+      "id": "generic-password",
+      "regexp": "(?i)(password|passwd|pwd)\\s*[:=]\\s*[^\\s]+"
+    },
+    {
+      "id": "bearer-token",
+      "regexp": "(?i)bearer\\s+[A-Za-z0-9\\-._~+/]+=*"
+    }
+  ]
+}
